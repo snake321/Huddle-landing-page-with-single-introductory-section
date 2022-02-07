@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+/* only for headings rules to spcify the famly font-family: 'Poppins', sans-serif; */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+/* for body rules to specify font-family: 'Open Sans', sans-serif; */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+--Violet: hsl(257, 40%, 49%);    
+--SoftMagenta: hsl(300, 69%, 71%);
+
+}
+/* mobile first  */
+html{
+    font-size: 50%;
+}
+
+#main-container{width:100%;
+    height: 100vh;
+    background-color:var(--Violet);
+    background-image: url(../images/bg-mobile.svg);
+    background-repeat: no-repeat;
+    background-position:top center;
+    overflow-x: hidden;
+    background-size:contain;
+position: relative;   
+
+
+}
+/* header section */
+.logo img{
+    width:15rem;
+    margin: 4rem 0rem 0rem 5rem;
+}
+header{
+    
+    display: flex; 
+    align-items: center;
+    /* width: 50%; */
+    justify-content:center;
+}
+header img{
+    
+    width:40rem;
+    margin: 10rem auto ;
+    text-align: center;
+}
+/*end of  header section */
+
+/* main section */
+
+.txt-section{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.heading{
+    font-size:3rem;
+    text-align: center;
+    font-family:'Poppins', sans-serif; 
+    color: rgba(255, 255, 255, 0.966);
+} 
+.para{padding:2rem 4rem ;
+    text-align: center;
+    font-size:2rem;
+    color: rgba(255, 255, 255, 0.966);
+    font-family: 'Open Sans', sans-serif;    
+    line-height: 22px;
+    font-weight:400;
+}
+
+.btn{
+    text-decoration: none;
+font-size:2rem;
+font-family:'Open Sans', sans-serif;    
+color: var(--Violet);
+background-color:#fff;
+padding:1.5rem 9rem;
+border-radius:50px;
+text-align:center;
+margin: 10px 0;
+position: relative;
+box-shadow: 1px 5px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 1px 5px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 1px 5px 5px 0px rgba(0,0,0,0.75);
+
+z-index: 1;
+transition: color 300ms linear;
+
+}
+.btn:before{
+    content:"";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+    background-color:var(--SoftMagenta);
+    transform:scaleX(0);
+    transform-origin: top;
+    border-radius:50px;
+    z-index:-1;
+    transition: transform 300ms linear;
+}
+
+.btn:hover::before{
+    transform:scale(1)
+}
+.btn:hover{
+    color: #fff;
+}
+.icons{
+    display:flex;
+    align-items:center;
+    justify-content: center;
+padding: 10rem 0rem;
+}
+.icons .fab{
+    border: 2px solid #fff;
+    font-size:2rem;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 100px;
+    margin: 0 1rem;
+    cursor: pointer;
+    transition:all 300ms linear;
+}
+
+.icons .fab:hover{
+    color: var(--SoftMagenta);
+    transform: translateY(-10px);
+    border-color: var(--SoftMagenta);
+}
+
+/*end of  main section */
+
+/* for tablet styles */
+@media screen and (min-width:500px){
+    header img{
+        width:50rem;
+    }
+        
+    
+}
+
+/* for small laptop  */
+@media screen and (min-width:900px){
+    
+    #main-container{
+        background-size: contain;
+        background-image: url(../images/bg-desktop.svg);
+        background-repeat:no-repeat;
+        
+    }
+    .container{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        padding-top: 50px;
+        max-width: 1500px;
+    }
+    header{
+        position: relative;
+        
+    }
+    header .img{
+        margin-bottom:50px;
+    }
+    
+    main .txt-section{
+        justify-content: flex-start;
+        align-items:flex-start;
+    /* padding-top: 50px; */
+}
+.heading,.para{
+    text-align:left;
+    max-width:600px;
+    
+}
+.heading,.btn{
+    margin-left: 35px;
+}
+footer{
+    position:absolute;
+    /* position: relative; */
+    right:2%;
+    bottom:-10%;
+}
+
+
+}
+
+@media screen and (min-width:1100px){
+ #main-container{
+     overflow:hidden;
+ }   
+    html {font-size:62.5%;}
+ 
+    header img{
+        width:60rem;
+    }
+    main .para{
+        line-height:30px
+    }
+}
